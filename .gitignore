@@ -31,4 +31,6 @@
 *.out
 *.app
 
-x64
+OpenCV-facial/x64
+OpenCV-facial/.vs
+OpenCV-facial/OpenCV-facial/x64
