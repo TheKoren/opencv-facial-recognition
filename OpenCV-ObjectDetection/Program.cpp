@@ -16,6 +16,7 @@ int main()
     cout << "Select input format:\n";
     cout << "1. Image\n";
     cout << "2. Video\n";
+    cout << "3. Webcam\n";
     cout << "Enter your choice: ";
     cin >> choice;
 
@@ -59,6 +60,17 @@ int main()
             cap.read(img);
             imshow("Video", img);
             waitKey(10);
+        }
+    }
+    else if (choice == 3)
+    {
+        VideoCapture cap(0);
+
+        while (true)
+        {
+            cap.read(img);
+            imshow("Video", img);
+            waitKey(1);
         }
     }
     else
