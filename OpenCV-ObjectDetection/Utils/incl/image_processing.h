@@ -20,5 +20,6 @@ void gaussianBlur(Mat& src, Mat& dst);
 void imageSharpening(Mat& src, Mat& dst);
 void histogramEqualization(Mat& src, Mat& dst);
 void processImage(Mat& src, int choice);
+void resizeCrop(Mat& src, Mat& dst);
 
 #endif // IMAGE_PROCESSING_H

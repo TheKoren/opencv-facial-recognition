@@ -73,6 +73,12 @@ void histogramEqualization(Mat& src, Mat& dst) {
     equalizeHist(dst, dst);
 }
 
+void resizeCrop(Mat& src, Mat& dst) {
+    Rect roi(100, 100, 250, 250);
+    src = src(roi);
+    resize(src, dst, Size(), 0.5, 0.5);
+}
+
 void processImage(Mat& src, int choice) {
     Mat dst;
     switch (choice)
@@ -133,6 +139,9 @@ void processImage(Mat& src, int choice) {
         cartoonEffect(src, dst);
         imshow("Cartoon Effect", dst);
         break;
+    case 13:
+        resizeCrop(src, dst);
+        imshow("Resize and Crop", dst);
     default:
         std::cout << "Invalid choice!" << std::endl;
         break;
