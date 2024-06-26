@@ -45,6 +45,7 @@ int main()
         cout << "11. Erosion\n";
         cout << "12. Cartoon effect\n";
         cout << "13. Resize and Crop\n";
+        cout << "14. Drawing\n";
         cout << "Enter your choice: ";
         cin >> choice;
 

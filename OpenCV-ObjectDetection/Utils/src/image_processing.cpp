@@ -79,6 +79,18 @@ void resizeCrop(Mat& src, Mat& dst) {
     resize(src, dst, Size(), 0.5, 0.5);
 }
 
+void drawingImage(Mat& dst)
+{
+    Mat img(512, 512, CV_8UC3, Scalar(31, 55, 150));
+
+    circle(img, Point(256, 256), 155, Scalar(0, 0, 0), FILLED);
+    rectangle(img, Point(130, 226), Point(382, 286), Scalar(255, 255, 255), FILLED);
+    line(img, Point(130, 296), Point(382, 296), Scalar(255, 255, 255), 2);
+
+    putText(img, "Sample", Point(137, 262), FONT_HERSHEY_DUPLEX, 1.85, Scalar(0, 70, 255), 1.5);
+    dst = img;
+}
+
 void processImage(Mat& src, int choice) {
     Mat dst;
     switch (choice)
@@ -142,6 +154,9 @@ void processImage(Mat& src, int choice) {
     case 13:
         resizeCrop(src, dst);
         imshow("Resize and Crop", dst);
+    case 14:
+        drawingImage(dst);
+        imshow("Drawing", dst);
     default:
         std::cout << "Invalid choice!" << std::endl;
         break;
